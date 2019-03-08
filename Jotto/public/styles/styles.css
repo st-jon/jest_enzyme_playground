@@ -1,4 +1,45 @@
 .App {
     margin: 1rem;
     font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.title {
+    text-align: center;
+}
+
+.table {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.table__head {
+    border: 1px solid black;
+    margin: 10px;
+    background: #DDD;
+    color: #444;
+}
+
+.table__body {
+    border: 1px solid black;
+    margin: 10px;
+}
+
+tr, td, th {
+    border-bottom: 1px solid black;
+    text-align: center;
+    padding: 20px;
+} 
+
+.success__message {
+    color: rgb(1, 95, 1);
+    padding: 20px;
+    border: 1px solid rgb(114, 236, 114);
+    border-radius: 10px;
+    background: rgb(199, 247, 199);
+    margin: 10px;
 }
