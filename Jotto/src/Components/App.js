@@ -15,7 +15,7 @@ class App extends Component{
     return(
       <div data-test="component-app" className="App">
         <h1 data-test="welcome-display">Jotto</h1>
-        <Congrats success={false} />
+        <Congrats success={true} />
         <Input />
         <GuessedWords guessedWords={[{guessedWord: 'train', letterMatchCount: 3}]}/>
       </div>
