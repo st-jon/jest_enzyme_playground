@@ -21,7 +21,7 @@ export class UnconnectedInput extends React.Component {
         const content = this.props.success ? null : (
             <form className="form">
                 <input data-test="component-inputBox" className="inputBox" ref={this.inputBox} type="text" placeholder="guess a word" autoFocus></input>
-                <button data-test="component-submitButton" onClick={this.submit} className="btn" type="submit">Submit</button>
+                <button data-test="component-submitButton" onClick={this.submit} className="btn" type="submit">SUBMIT</button>
             </form>
         )
         return (
