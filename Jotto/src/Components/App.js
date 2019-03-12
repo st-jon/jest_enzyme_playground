@@ -1,26 +1,33 @@
 import React, { Component} from "react"
-import {hot} from "react-hot-loader";
+import {connect} from 'react-redux'
 
 import GuessedWords from './GuessedWords'
 import Congrats from './Congrats'
 import Input from './Input'
 
-class App extends Component{
-  constructor() {
-    super()
-   
+import {getSecretWord} from '../actions/actions'
+
+export class UnConnectedApp extends Component{
+
+  componentDidMount() {
+    this.props.getSecretWord();
   }
 
   render(){
     return(
       <div data-test="component-app" className="App">
         <h1 data-test="welcome-display">Jotto</h1>
-        <Congrats success={true} />
+        <Congrats success={this.props.success} />
         <Input />
-        <GuessedWords guessedWords={[{guessedWord: 'train', letterMatchCount: 3}]}/>
+        <GuessedWords guessedWords={this.props.guessedWords}/>
       </div>
     )
   }
 }
 
-export default hot(module)(App)
+const mapStateToProps = (state) => {
+  const {success, guessedWords, secretWord} = state
+  return {success, guessedWords, secretWord}
+}
+
+export default connect(mapStateToProps, {getSecretWord})(UnConnectedApp)
